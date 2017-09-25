@@ -1,4 +1,4 @@
-node {
+node('HetznerStage') {
     def app
 
     stage('Clone repository') {
