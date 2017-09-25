@@ -9,7 +9,9 @@ node('HetznerStage') {
    stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-        app = docker.pull("tutum/apache-php")
+          agent {
+            docker { image 'php:latest' }
+        }
         /*app = docker.build("php") */
     }
 }
