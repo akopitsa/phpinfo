@@ -5,16 +5,14 @@ node('HetznerStage') {
         /* Let's make sure we have the repository cloned to our workspace */
         checkout scm
     }
-pipeline {
-    agent {
-        docker { image 'node:7-alpine' }
+    docker.image('php:latest').inside {
+
+    stage("Install Bundler") {
+      sh "php -v"
     }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-            }
-        }
+
+    stage("Use Bundler to install dependencies") {
+      sh "w"
     }
-}
+    }
 }
