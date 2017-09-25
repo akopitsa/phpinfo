@@ -9,9 +9,18 @@ node('HetznerStage') {
    stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-          agent {
-            docker { image 'php:latest' }
+pipeline {
+    agent {
+        docker { image 'php:latest' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'php --version'
+            }
         }
+    }
+}
         /*app = docker.build("php") */
     }
 }
