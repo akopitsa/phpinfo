@@ -10,6 +10,6 @@ node('HetznerStage') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.pull("php:latest")
+        app = docker.build("php")
     }
 }
