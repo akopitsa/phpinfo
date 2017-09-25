@@ -12,7 +12,7 @@ node('HetznerStage') {
     }
 
     stage("Use Bundler to install dependencies") {
-      sh "w"
+      sh "hostname"
     }
     }
 }
