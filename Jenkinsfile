@@ -8,6 +8,7 @@ node('HetznerStage') {
 
     stage("Install Bundler") {
       sh "php -v"
+      sh "php index.php"  
     }
 
     stage("Use Bundler to install dependencies") {
